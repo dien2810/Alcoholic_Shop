@@ -75,8 +75,8 @@ export const useStore = create(
             if (type == 'Coffee') {
               for (let i = 0; i < state.CoffeeList.length; i++) {
                 if (state.CoffeeList[i].id == id) {
-                  if (state.CoffeeList[i].favorite == false) {
-                    state.CoffeeList[i].favorite == true;
+                  if (state.CoffeeList[i].favourite == false) {
+                    state.CoffeeList[i].favourite = true;
                     state.FavoriteList.unshift(state.CoffeeList[i]);
                   }
                   break;
@@ -85,8 +85,8 @@ export const useStore = create(
             } else if (type == 'Bean') {
               for (let i = 0; i < state.BeanList.length; i++) {
                 if (state.BeanList[i].id == id) {
-                  if (state.BeanList[i].favorite == false) {
-                    state.BeanList[i].favorite == true;
+                  if (state.BeanList[i].favourite == false) {
+                    state.BeanList[i].favourite = true;
                     state.FavoriteList.unshift(state.BeanList[i]);
                   }
                   break;
@@ -101,8 +101,8 @@ export const useStore = create(
             if (type == 'Coffee') {
               for (let i = 0; i < state.CoffeeList.length; i++) {
                 if (state.CoffeeList[i].id == id) {
-                  if (state.CoffeeList[i].favorite == true) {
-                    state.CoffeeList[i].favorite == false;
+                  if (state.CoffeeList[i].favourite == true) {
+                    state.CoffeeList[i].favourite = false;
                   }
                   break;
                 }
@@ -110,8 +110,8 @@ export const useStore = create(
             } else if (type == 'Bean') {
               for (let i = 0; i < state.BeanList.length; i++) {
                 if (state.BeanList[i].id == id) {
-                  if (state.BeanList[i].favorite == true) {
-                    state.BeanList[i].favorite == false;
+                  if (state.BeanList[i].favourite == true) {
+                    state.BeanList[i].favourite = false;
                   }
                   break;
                 }
@@ -128,7 +128,6 @@ export const useStore = create(
           }),
         ),
     }),
-
     {
       name: 'coffee-app',
       storage: createJSONStorage(() => AsyncStorage),
