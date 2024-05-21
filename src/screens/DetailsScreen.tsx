@@ -152,7 +152,7 @@ const DetailsScreen = ({navigation, route}: any) => {
               imagelink_square: ItemofIndex.imagelink_square,
               special_ingredient: ItemofIndex.special_ingredient,
               type: ItemofIndex.type,
-              prices: price,
+              price: price,
             });
           }}></PaymentFooter>
       </ScrollView>
