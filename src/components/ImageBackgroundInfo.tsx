@@ -29,7 +29,7 @@ interface ImageBackgroundInfoProps {
   average_rating: number;
   ratings_count: string;
   roasted: string;
-  BackHandler: any;
+  BackHandler?: any;
   ToggleFavorite: any;
 }
 const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
