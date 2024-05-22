@@ -54,7 +54,7 @@ const OrderItemCard: React.FC<OrderItemCardProps> = ({
                   styles.SizeText,
                   {
                     fontSize:
-                      type == 'Bean' ? FONTSIZE.size_12 : FONTSIZE.size_16,
+                      type == 'Beer' ? FONTSIZE.size_12 : FONTSIZE.size_16,
                   },
                 ]}>
                 {data.size}
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   CardSubtitle: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_12,
-    color: COLORS.primaryLightGreyHex,
+    color: COLORS.secondaryLightGreyHex,
   },
   CardCurrency: {
     fontFamily: FONTFAMILY.poppins_semibold,

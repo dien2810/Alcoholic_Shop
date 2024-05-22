@@ -25,7 +25,7 @@ interface FavoriteItemCardProps {
   ingredients: string;
   average_rating: number;
   ratings_count: string;
-  roasted: string;
+  alcohol: string;
   description: string;
   favorite: boolean;
   ToggleFavorite: any;
@@ -39,7 +39,7 @@ const FavoriteItemCard: React.FC<FavoriteItemCardProps> = ({
   ingredients,
   average_rating,
   ratings_count,
-  roasted,
+  alcohol,
   description,
   favorite,
   ToggleFavorite,
@@ -57,7 +57,7 @@ const FavoriteItemCard: React.FC<FavoriteItemCardProps> = ({
         ingredients={ingredients}
         average_rating={average_rating}
         ratings_count={ratings_count}
-        roasted={roasted}
+        alcohol={alcohol}
         ToggleFavorite={ToggleFavorite}
       />
       <View style={styles.CardContainer}>

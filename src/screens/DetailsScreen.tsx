@@ -22,8 +22,9 @@ import PaymentFooter from '../components/PaymentFooter';
 const DetailsScreen = ({navigation, route}: any) => {
   console.log('route=', route.params);
   const ItemofIndex = useStore((state: any) =>
-    route.params.type == 'Coffee' ? state.CoffeeList : state.BeanList,
+    route.params.type == 'Coffee' ? state.CoffeeList : state.BeerList,
   )[route.params.index];
+  console.log(ItemofIndex);
   const BackHandler = () => {
     navigation.pop();
   };
@@ -37,7 +38,7 @@ const DetailsScreen = ({navigation, route}: any) => {
     id,
     index,
     name,
-    roasted,
+    alcohol,
     imagelink_square,
     special_ingredient,
     type,
@@ -47,7 +48,7 @@ const DetailsScreen = ({navigation, route}: any) => {
       id,
       index,
       name,
-      roasted,
+      alcohol,
       imagelink_square,
       special_ingredient,
       type,
@@ -78,7 +79,7 @@ const DetailsScreen = ({navigation, route}: any) => {
           ingredients={ItemofIndex.ingredients}
           average_rating={ItemofIndex.average_rating}
           ratings_count={ItemofIndex.ratings_count}
-          roasted={ItemofIndex.roasted}
+          alcohol={ItemofIndex.alcohol}
           BackHandler={BackHandler}
           ToggleFavorite={ToggleFavorite}
         />
@@ -125,7 +126,7 @@ const DetailsScreen = ({navigation, route}: any) => {
                     styles.SizeText,
                     {
                       fontSize:
-                        ItemofIndex.type == 'Bean'
+                        ItemofIndex.type == 'Beer'
                           ? FONTSIZE.size_14
                           : FONTSIZE.size_16,
                       color:
@@ -148,7 +149,7 @@ const DetailsScreen = ({navigation, route}: any) => {
               id: ItemofIndex.id,
               index: ItemofIndex.index,
               name: ItemofIndex.name,
-              roasted: ItemofIndex.roasted,
+              alcohol: ItemofIndex.alcohol,
               imagelink_square: ItemofIndex.imagelink_square,
               special_ingredient: ItemofIndex.special_ingredient,
               type: ItemofIndex.type,

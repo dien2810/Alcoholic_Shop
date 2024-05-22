@@ -28,7 +28,7 @@ interface ImageBackgroundInfoProps {
   ingredients: string;
   average_rating: number;
   ratings_count: string;
-  roasted: string;
+  alcohol: string;
   BackHandler?: any;
   ToggleFavorite: any;
 }
@@ -43,7 +43,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
   ingredients,
   average_rating,
   ratings_count,
-  roasted,
+  alcohol,
   BackHandler,
   ToggleFavorite,
 }) => {
@@ -102,8 +102,8 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               <View style={styles.ItemPropertiesContainer}>
                 <View style={styles.ProperFirst}>
                   <CustomIcon
-                    name={type == 'Bean' ? 'bean' : 'beans'}
-                    size={type == 'Bean' ? FONTSIZE.size_18 : FONTSIZE.size_24}
+                    name={type == 'Beer' ? 'bean' : 'beans'}
+                    size={type == 'Beer' ? FONTSIZE.size_18 : FONTSIZE.size_24}
                     color={COLORS.primaryOrangeHex}
                   />
                   <Text
@@ -111,7 +111,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                       styles.PropertyTextFirst,
                       {
                         marginTop:
-                          type == 'Bean'
+                          type == 'Beer'
                             ? SPACING.space_4 + SPACING.space_2
                             : 0,
                       },
@@ -121,7 +121,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                 </View>
                 <View style={styles.ProperFirst}>
                   <CustomIcon
-                    name={type == 'Bean' ? 'location' : 'drop'}
+                    name={type == 'Beer' ? 'location' : 'drop'}
                     size={FONTSIZE.size_16}
                     color={COLORS.primaryOrangeHex}
                   />
@@ -139,8 +139,8 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                 <Text style={styles.RatingText}>{average_rating}</Text>
                 <Text style={styles.RatingCount}>({ratings_count})</Text>
               </View>
-              <View style={styles.RoastedContainer}>
-                <Text style={styles.RoastedText}>{roasted}</Text>
+              <View style={styles.AlcoholContainer}>
+                <Text style={styles.AlcoholText}>{alcohol}</Text>
               </View>
             </View>
           </View>
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_12,
     color: COLORS.primaryWhiteHex,
   },
-  RoastedContainer: {
+  AlcoholContainer: {
     height: 55,
     width: 55 * 2 + SPACING.space_20,
     borderRadius: BORDERRADIUS.radius_15,
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: COLORS.primaryBlackHex,
   },
-  RoastedText: {
+  AlcoholText: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_10,
     color: COLORS.primaryWhiteHex,

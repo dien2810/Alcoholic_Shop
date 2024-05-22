@@ -3,13 +3,13 @@ import {produce} from 'immer';
 import {persist, createJSONStorage} from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CoffeeData from '../data/CoffeeData';
-import BeansData from '../data/BeansData';
+import BeerData from '../data/BeerData';
 
 export const useStore = create(
   persist(
     (set, get) => ({
       CoffeeList: CoffeeData,
-      BeanList: BeansData,
+      BeerList: BeerData,
       CartPrice: 0,
       FavoriteList: [],
       CartList: [],
@@ -82,12 +82,12 @@ export const useStore = create(
                   break;
                 }
               }
-            } else if (type == 'Bean') {
-              for (let i = 0; i < state.BeanList.length; i++) {
-                if (state.BeanList[i].id == id) {
-                  if (state.BeanList[i].favourite == false) {
-                    state.BeanList[i].favourite = true;
-                    state.FavoriteList.unshift(state.BeanList[i]);
+            } else if (type == 'Beer') {
+              for (let i = 0; i < state.BeerList.length; i++) {
+                if (state.BeerList[i].id == id) {
+                  if (state.BeerList[i].favourite == false) {
+                    state.BeerList[i].favourite = true;
+                    state.FavoriteList.unshift(state.BeerList[i]);
                   }
                   break;
                 }
@@ -107,11 +107,11 @@ export const useStore = create(
                   break;
                 }
               }
-            } else if (type == 'Bean') {
-              for (let i = 0; i < state.BeanList.length; i++) {
-                if (state.BeanList[i].id == id) {
-                  if (state.BeanList[i].favourite == true) {
-                    state.BeanList[i].favourite = false;
+            } else if (type == 'Beer') {
+              for (let i = 0; i < state.BeerList.length; i++) {
+                if (state.BeerList[i].id == id) {
+                  if (state.BeerList[i].favourite == true) {
+                    state.BeerList[i].favourite = false;
                   }
                   break;
                 }
@@ -199,7 +199,7 @@ export const useStore = create(
         ),
     }),
     {
-      name: 'coffee-app',
+      name: 'alcoholic-app',
       storage: createJSONStorage(() => AsyncStorage),
     },
   ),

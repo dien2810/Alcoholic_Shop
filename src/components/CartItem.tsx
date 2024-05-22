@@ -22,7 +22,7 @@ interface CartItemProps {
   name: string;
   imagelink_square: ImageProps;
   special_ingredient: string;
-  roasted: string;
+  alcohol: string;
   prices: any;
   type: string;
   incrementCartItemQuantityHandler: any;
@@ -33,7 +33,7 @@ const CartItem: React.FC<CartItemProps> = ({
   name,
   imagelink_square,
   special_ingredient,
-  roasted,
+  alcohol,
   prices,
   type,
   incrementCartItemQuantityHandler,
@@ -56,8 +56,8 @@ const CartItem: React.FC<CartItemProps> = ({
                   {special_ingredient}
                 </Text>
               </View>
-              <View style={styles.CartItemRoastedContainer}>
-                <Text style={styles.CartItemRoastedText}>{roasted}</Text>
+              <View style={styles.CartItemAlcoholContainer}>
+                <Text style={styles.CartItemAlcoholText}>{alcohol}</Text>
               </View>
             </View>
           </View>
@@ -73,7 +73,7 @@ const CartItem: React.FC<CartItemProps> = ({
                       styles.SizeText,
                       {
                         fontSize:
-                          type == 'Bean' ? FONTSIZE.size_12 : FONTSIZE.size_16,
+                          type == 'Beer' ? FONTSIZE.size_12 : FONTSIZE.size_16,
                       },
                     ]}>
                     {data.size}
@@ -138,7 +138,7 @@ const CartItem: React.FC<CartItemProps> = ({
                     styles.SizeText,
                     {
                       fontSize:
-                        type == 'Bean' ? FONTSIZE.size_12 : FONTSIZE.size_16,
+                        type == 'Beer' ? FONTSIZE.size_12 : FONTSIZE.size_16,
                     },
                   ]}>
                   {prices[0].size}
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_12,
     color: COLORS.secondaryLightGreyHex,
   },
-  CartItemRoastedContainer: {
+  CartItemAlcoholContainer: {
     height: 50,
     width: 50 * 2 + SPACING.space_20,
     borderRadius: BORDERRADIUS.radius_15,
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.primaryDarkGreyHex,
   },
-  CartItemRoastedText: {
+  CartItemAlcoholText: {
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_10,
     color: COLORS.primaryWhiteHex,

@@ -48,7 +48,7 @@ const getCoffeeList = (category: string, data: any) => {
 };
 const HomeScreen = ({navigation}: any) => {
   const CoffeeList = useStore((state: any) => state.CoffeeList);
-  const BeanList = useStore((state: any) => state.BeanList);
+  const BeerList = useStore((state: any) => state.BeerList);
   const [categories, setCategories] = useState(
     getCategoriesFromData(CoffeeList),
   );
@@ -91,7 +91,7 @@ const HomeScreen = ({navigation}: any) => {
     id,
     index,
     name,
-    roasted,
+    alcohol,
     imagelink_square,
     special_ingredient,
     type,
@@ -101,7 +101,7 @@ const HomeScreen = ({navigation}: any) => {
       id,
       index,
       name,
-      roasted,
+      alcohol,
       imagelink_square,
       special_ingredient,
       type,
@@ -236,7 +236,7 @@ const HomeScreen = ({navigation}: any) => {
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  roasted={item.roasted}
+                  alcohol={item.alcohol}
                   imagelink_square={item.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
@@ -247,12 +247,12 @@ const HomeScreen = ({navigation}: any) => {
             );
           }}
         />
-        {/* Beans FlatList*/}
-        <Text style={styles.CoffeeBeansTitle}>Coffee Beans</Text>
+        {/* Beer FlatList*/}
+        <Text style={styles.CoffeeBeersTitle}>Beer</Text>
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
-          data={BeanList}
+          data={BeerList}
           contentContainerStyle={[
             styles.FlatListContainer,
             {marginBottom: tabBarHeight},
@@ -272,7 +272,7 @@ const HomeScreen = ({navigation}: any) => {
                   id={item.id}
                   index={item.index}
                   type={item.type}
-                  roasted={item.roasted}
+                  alcohol={item.alcohol}
                   imagelink_square={item.imagelink_square}
                   name={item.name}
                   special_ingredient={item.special_ingredient}
@@ -352,7 +352,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: SPACING.space_36 * 3,
   },
-  CoffeeBeansTitle: {
+  CoffeeBeersTitle: {
     fontSize: FONTSIZE.size_18,
     marginLeft: SPACING.space_30,
     marginTop: SPACING.space_20,
