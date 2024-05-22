@@ -13,7 +13,6 @@ import {COLORS, SPACING} from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
 import EmptyListAnimation from '../components/EmptyListAnimation';
 import PaymentFooter from '../components/PaymentFooter';
-import {current} from 'immer';
 import CartItem from '../components/CartItem';
 const CartScreen = ({navigation, route}: any) => {
   const tabBarHeight = useBottomTabBarHeight();
@@ -27,7 +26,7 @@ const CartScreen = ({navigation, route}: any) => {
   );
   const caculateCartPrice = useStore((state: any) => state.caculateCartPrice);
   const buttonPressHandler = () => {
-    navigation.push('Payment');
+    navigation.push('Payment', {amount: CartPrice});
   };
   const IncrementCartItemQuantityHandler = (id: string, size: string) => {
     incrementCartItemQuantity(id, size);
