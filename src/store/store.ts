@@ -2,13 +2,13 @@ import {create} from 'zustand';
 import {produce} from 'immer';
 import {persist, createJSONStorage} from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CoffeeData from '../data/CoffeeData';
+import WineData from '../data/WineData';
 import BeerData from '../data/BeerData';
 
 export const useStore = create(
   persist(
     (set, get) => ({
-      CoffeeList: CoffeeData,
+      WineList: WineData,
       BeerList: BeerData,
       CartPrice: 0,
       FavoriteList: [],
@@ -72,12 +72,12 @@ export const useStore = create(
       addToFavoriteList: (type: string, id: string) =>
         set(
           produce(state => {
-            if (type == 'Coffee') {
-              for (let i = 0; i < state.CoffeeList.length; i++) {
-                if (state.CoffeeList[i].id == id) {
-                  if (state.CoffeeList[i].favourite == false) {
-                    state.CoffeeList[i].favourite = true;
-                    state.FavoriteList.unshift(state.CoffeeList[i]);
+            if (type == 'Wine') {
+              for (let i = 0; i < state.WineList.length; i++) {
+                if (state.WineList[i].id == id) {
+                  if (state.WineList[i].favourite == false) {
+                    state.WineList[i].favourite = true;
+                    state.FavoriteList.unshift(state.WineList[i]);
                   }
                   break;
                 }
@@ -98,11 +98,11 @@ export const useStore = create(
       deleteFromFavoriteList: (type: string, id: string) =>
         set(
           produce(state => {
-            if (type == 'Coffee') {
-              for (let i = 0; i < state.CoffeeList.length; i++) {
-                if (state.CoffeeList[i].id == id) {
-                  if (state.CoffeeList[i].favourite == true) {
-                    state.CoffeeList[i].favourite = false;
+            if (type == 'Wine') {
+              for (let i = 0; i < state.WineList.length; i++) {
+                if (state.WineList[i].id == id) {
+                  if (state.WineList[i].favourite == true) {
+                    state.WineList[i].favourite = false;
                   }
                   break;
                 }

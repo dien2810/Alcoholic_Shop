@@ -22,7 +22,7 @@ import PaymentFooter from '../components/PaymentFooter';
 const DetailsScreen = ({navigation, route}: any) => {
   console.log('route=', route.params);
   const ItemofIndex = useStore((state: any) =>
-    route.params.type == 'Coffee' ? state.CoffeeList : state.BeerList,
+    route.params.type == 'Wine' ? state.WineList : state.BeerList,
   )[route.params.index];
   console.log(ItemofIndex);
   const BackHandler = () => {

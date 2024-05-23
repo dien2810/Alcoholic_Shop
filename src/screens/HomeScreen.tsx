@@ -22,15 +22,15 @@ import {
 } from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
 import CustomIcon from '../components/CustomIcon';
-import CoffeeCard from '../components/CoffeeCard';
+import WineCard from '../components/WineCard';
 
 const getCategoriesFromData = (data: any) => {
   let temp: any = {};
   for (let i = 0; i < data.length; i++) {
-    if (temp[data[i].name] == undefined) {
-      temp[data[i].name] = 1;
+    if (temp[data[i].ingredients] == undefined) {
+      temp[data[i].ingredients] = 1;
     } else {
-      temp[data[i].name]++;
+      temp[data[i].ingredients]++;
     }
   }
   let categories = Object.keys(temp);
@@ -38,56 +38,56 @@ const getCategoriesFromData = (data: any) => {
   return categories;
 };
 
-const getCoffeeList = (category: string, data: any) => {
+const getWineList = (category: string, data: any) => {
   if (category == 'All') {
     return data;
   } else {
-    let coffeeList = data.filter((item: any) => item.name == category);
-    return coffeeList;
+    let wineList = data.filter((item: any) => item.ingredients == category);
+    return wineList;
   }
 };
 const HomeScreen = ({navigation}: any) => {
-  const CoffeeList = useStore((state: any) => state.CoffeeList);
+  const WineList = useStore((state: any) => state.WineList);
   const BeerList = useStore((state: any) => state.BeerList);
   const [categories, setCategories] = useState(
-    getCategoriesFromData(CoffeeList),
+    getCategoriesFromData(WineList),
   );
   const [searchText, setSearchText] = useState('');
   const [categoriesIndex, setCategoriesIndex] = useState({
     index: 0,
     category: categories[0],
   });
-  const [sortedCoffee, setSortedCoffee] = useState(
-    getCoffeeList(categoriesIndex.category, CoffeeList),
+  const [sortedWine, setSortedWine] = useState(
+    getWineList(categoriesIndex.category, WineList),
   );
   const ListRef: any = useRef<FlatList>();
   const tabBarHeight = useBottomTabBarHeight();
-  const searchCoffee = (search: string) => {
+  const searchWine = (search: string) => {
     if (search != '') {
       ListRef?.current?.scrollToOffset({
         animated: true,
         offset: 0,
       });
       setCategoriesIndex({index: 0, category: categories[0]});
-      setSortedCoffee([
-        ...CoffeeList.filter((item: any) =>
+      setSortedWine([
+        ...WineList.filter((item: any) =>
           item.name.toLowerCase().includes(search.toLowerCase()),
         ),
       ]);
     }
   };
-  const resetSearchCoffee = () => {
+  const resetSearchWine = () => {
     ListRef?.current?.scrollToOffset({
       animated: true,
       offset: 0,
     });
     setCategoriesIndex({index: 0, category: categories[0]});
-    setSortedCoffee([...CoffeeList]);
+    setSortedWine([...WineList]);
     setSearchText('');
   };
   const addToCart = useStore((state: any) => state.addToCart);
   const caculateCartPrice = useStore((state: any) => state.caculateCartPrice);
-  const CoffeeCardAddToCartHandler = ({
+  const WineCardAddToCartHandler = ({
     id,
     index,
     name,
@@ -115,7 +115,7 @@ const HomeScreen = ({navigation}: any) => {
     );
   };
   // console.log('categories = ', categories);
-  // console.log('sortedCoffee=', sortedCoffee.length);
+  // console.log('sortedWine=', sortedWine.length);
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
@@ -129,7 +129,7 @@ const HomeScreen = ({navigation}: any) => {
         <View style={styles.InputContainer}>
           <TouchableOpacity
             onPress={() => {
-              searchCoffee(searchText);
+              searchWine(searchText);
             }}>
             <CustomIcon
               style={styles.InputIcon}
@@ -147,14 +147,14 @@ const HomeScreen = ({navigation}: any) => {
             value={searchText}
             onChangeText={text => {
               setSearchText(text);
-              searchCoffee(text);
+              searchWine(text);
             }}
             placeholderTextColor={COLORS.primaryLightGreyHex}
             style={styles.TextInputContainer}></TextInput>
           {searchText.length > 0 ? (
             <TouchableOpacity
               onPress={() => {
-                resetSearchCoffee();
+                resetSearchWine();
               }}>
               <CustomIcon
                 style={styles.InputIcon}
@@ -182,8 +182,8 @@ const HomeScreen = ({navigation}: any) => {
                     index: index,
                     category: categories[index],
                   });
-                  setSortedCoffee([
-                    ...getCoffeeList(categories[index], CoffeeList),
+                  setSortedWine([
+                    ...getWineList(categories[index], WineList),
                   ]);
                   ListRef?.current?.scrollToOffset({
                     animated: true,
@@ -209,7 +209,7 @@ const HomeScreen = ({navigation}: any) => {
             </View>
           ))}
         </ScrollView>
-        {/* Coffee FlatList */}
+        {/* Wine FlatList */}
         <FlatList
           ref={ListRef}
           horizontal
@@ -219,7 +219,7 @@ const HomeScreen = ({navigation}: any) => {
             </View>
           }
           showsHorizontalScrollIndicator={false}
-          data={sortedCoffee}
+          data={sortedWine}
           contentContainerStyle={styles.FlatListContainer}
           keyExtractor={item => item.id}
           renderItem={({item}) => {
@@ -232,7 +232,7 @@ const HomeScreen = ({navigation}: any) => {
                     type: item.type,
                   });
                 }}>
-                <CoffeeCard
+                <WineCard
                   id={item.id}
                   index={item.index}
                   type={item.type}
@@ -242,13 +242,13 @@ const HomeScreen = ({navigation}: any) => {
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={CoffeeCardAddToCartHandler}></CoffeeCard>
+                  buttonPressHandler={WineCardAddToCartHandler}></WineCard>
               </TouchableOpacity>
             );
           }}
         />
         {/* Beer FlatList*/}
-        <Text style={styles.CoffeeBeersTitle}>Beer</Text>
+        <Text style={styles.WineBeersTitle}>Beer</Text>
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -268,7 +268,7 @@ const HomeScreen = ({navigation}: any) => {
                     type: item.type,
                   });
                 }}>
-                <CoffeeCard
+                <WineCard
                   id={item.id}
                   index={item.index}
                   type={item.type}
@@ -278,7 +278,7 @@ const HomeScreen = ({navigation}: any) => {
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={CoffeeCardAddToCartHandler}></CoffeeCard>
+                  buttonPressHandler={WineCardAddToCartHandler}></WineCard>
               </TouchableOpacity>
             );
           }}
@@ -352,7 +352,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: SPACING.space_36 * 3,
   },
-  CoffeeBeersTitle: {
+  WineBeersTitle: {
     fontSize: FONTSIZE.size_18,
     marginLeft: SPACING.space_30,
     marginTop: SPACING.space_20,

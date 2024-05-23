@@ -20,7 +20,7 @@ import CustomIcon from './CustomIcon';
 import BGIcon from './BGIcon';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
-interface CoffeeCardProps {
+interface WineCardProps {
   id: string;
   index: number;
   type: string;
@@ -32,7 +32,7 @@ interface CoffeeCardProps {
   price: any;
   buttonPressHandler: any;
 }
-const CoffeeCard: React.FC<CoffeeCardProps> = ({
+const WineCard: React.FC<WineCardProps> = ({
   id,
   index,
   type,
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
     color: COLORS.primaryWhiteHex,
   },
 });
-export default CoffeeCard;
+export default WineCard;
