@@ -18,184 +18,76 @@
       "sha1": "039fbff59306d5e4300ef7614d796844345575af"
     },
     {
-      "path": "src/assets/coffee_assets/americano/portrait/americano_pic_1_portrait.png",
-      "sha1": "685f99c5602e8692061e11137b4b0c94b6f92c0c"
-    },
-    {
-      "path": "src/assets/coffee_assets/americano/portrait/americano_pic_2_portrait.png",
-      "sha1": "3d56d41dc7d42da2f65d38bf3c62b695d35c2ef8"
-    },
-    {
-      "path": "src/assets/coffee_assets/americano/portrait/americano_pic_3_portrait.png",
-      "sha1": "a1d3f6dff501ff52f96a12f4b76825087c4da4a6"
-    },
-    {
-      "path": "src/assets/coffee_assets/americano/square/americano_pic_1_square.png",
-      "sha1": "137ba5cae8d7b77fd97a8eeb6e8c699b4433472d"
-    },
-    {
-      "path": "src/assets/coffee_assets/americano/square/americano_pic_2_square.png",
-      "sha1": "f371d1fa1e462a3e50046465f268342f15b2bd93"
-    },
-    {
-      "path": "src/assets/coffee_assets/americano/square/americano_pic_3_square.png",
-      "sha1": "38d0d2092c97148a973b4a8123cdcfb52eae0b88"
-    },
-    {
-      "path": "src/assets/coffee_assets/arabica_coffee_beans/arabica_coffee_beans_portrait.png",
-      "sha1": "16c9a6b4831083049f7707b8dcc3ca0c7498a691"
-    },
-    {
-      "path": "src/assets/coffee_assets/arabica_coffee_beans/arabica_coffee_beans_square.png",
-      "sha1": "b375405f6f071ffff4e8b605f910c9a596e29912"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/portrait/black_coffee_pic_1_portrait.png",
-      "sha1": "8ad3aef75b17cfa2cf331c0a2627b6b86fbd7e68"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/portrait/black_coffee_pic_2_portrait.png",
-      "sha1": "45eca36530211ca5f391959ab78e6a065e9e38c7"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/portrait/black_coffee_pic_3_portrait.png",
-      "sha1": "80bf34874c6e91beffdf178fd411e4da605c5b1f"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/square/black_coffee_pic_1_square.png",
-      "sha1": "13962f4de82128e0284fdd4a17f35c26c15bef60"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/square/black_coffee_pic_2_square.png",
-      "sha1": "1be7ef6985aeff91f4aeadb237b71f1f6c1d4a8f"
-    },
-    {
-      "path": "src/assets/coffee_assets/black_coffee/square/black_coffee_pic_3_square.png",
-      "sha1": "517bd167fa181c73075414bf49a3d74e519d866b"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/portrait/cappuccino_pic_1_portrait.png",
-      "sha1": "f779a1ae66323767c0c0297f2c6de012cd5c8ea5"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/portrait/cappuccino_pic_2_portrait.png",
-      "sha1": "b112cd3b97bfb245e384f72992e288091c086cf6"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/portrait/cappuccino_pic_3_portrait.png",
-      "sha1": "dd8ac758166a523cacc521df589cd580eee249e3"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/square/cappuccino_pic_1_square.png",
-      "sha1": "c5024b616a95aa2c92e4567c00fa262203bdf537"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/square/cappuccino_pic_2_square.png",
-      "sha1": "0b6bd08c07938581803903e17a27a9560b844aff"
-    },
-    {
-      "path": "src/assets/coffee_assets/cappuccino/square/cappuccino_pic_3_square.png",
-      "sha1": "7a0435698649161f11e6be91656c7bc3d3f74715"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/portrait/espresso_pic_1_portrait.png",
-      "sha1": "61498f6756dc52c8360df69be36a392ccde9e690"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/portrait/espresso_pic_2_portrait.png",
-      "sha1": "a7d1cb7128b15df1e3dce4ea81607a37bbb0e1f6"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/portrait/espresso_pic_3_portrait.png",
-      "sha1": "436c50c217b2d7739cd6bb5aec54db175b210912"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/square/espresso_pic_1_square.png",
-      "sha1": "3d26c8071b1b3121c2502a3dbc421db0e4f2a1f7"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/square/espresso_pic_2_square.png",
-      "sha1": "d8ccd27a3d6a1ca845478dfbed70f642f5d1d6bc"
-    },
-    {
-      "path": "src/assets/coffee_assets/espresso/square/espresso_pic_3_square.png",
-      "sha1": "e0e35545410fbb2a19ca0def1fd47dcdd8c3b8a5"
-    },
-    {
-      "path": "src/assets/coffee_assets/excelsa_coffee_beans/excelsa_coffee_beans_portrait.png",
-      "sha1": "bbdb79546f6e3fd8941d259636ad413350ed9ebf"
-    },
-    {
-      "path": "src/assets/coffee_assets/excelsa_coffee_beans/excelsa_coffee_beans_square.png",
-      "sha1": "6937f747f201fa632d3502f76bdff730eb05282a"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/portrait/latte_pic_1_portrait.png",
-      "sha1": "8ad0a4a284c645b19caa0de63c18c7431489d758"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/portrait/latte_pic_2_portrait.png",
-      "sha1": "69bd668a78900a5685b593a405bb203645545eaa"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/portrait/latte_pic_3_portrait.png",
-      "sha1": "91bb2130615b67f126f6892e7557833035f0be2d"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/square/latte_pic_1_square.png",
-      "sha1": "6328154fafec18dc200dc94d00556b747257e2f2"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/square/latte_pic_2_square.png",
-      "sha1": "1812c74358047243e3b30925af31b501f0a83e85"
-    },
-    {
-      "path": "src/assets/coffee_assets/latte/square/latte_pic_3_square.png",
-      "sha1": "36a906f3948b945234db478856285a6df602ab17"
-    },
-    {
-      "path": "src/assets/coffee_assets/liberica_coffee_beans/liberica_coffee_beans_portrait.png",
-      "sha1": "91b740580f694387995664be0b31e107e5983032"
-    },
-    {
-      "path": "src/assets/coffee_assets/liberica_coffee_beans/liberica_coffee_beans_square.png",
-      "sha1": "4a8e436c08d3f6b22e7d0216b9767e9a99635e91"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/portrait/macchiato_pic_1_portrait.png",
-      "sha1": "81148b809d3844f7059b53b588cdf1572bc3af00"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/portrait/macchiato_pic_2_portrait.png",
-      "sha1": "9339efb478e7cd44bcff4a507cc10ac378a6aade"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/portrait/macchiato_pic_3_portrait.png",
-      "sha1": "b0322d33abddfe1812c0973ab97b44684159fa25"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/square/macchiato_pic_1_square.png",
-      "sha1": "e8117c34de4c4cc1513e77d34afaf36cfc42f79f"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/square/macchiato_pic_2_square.png",
-      "sha1": "662890a8d53615c452f63db831e569437318af20"
-    },
-    {
-      "path": "src/assets/coffee_assets/macchiato/square/macchiato_pic_3_square.png",
-      "sha1": "1beae6c27840c63e168df79dda3bdc819c593ab7"
-    },
-    {
-      "path": "src/assets/coffee_assets/robusta_coffee_beans/robusta_coffee_beans_portrait.png",
-      "sha1": "9a299174dff0c77f894fc80e9cf5fb7aa347dfad"
-    },
-    {
-      "path": "src/assets/coffee_assets/robusta_coffee_beans/robusta_coffee_beans_square.png",
-      "sha1": "2309066dadc84c09821be71da1a6790792d1a764"
+      "path": "src/assets/fonts/AntDesign.ttf",
+      "sha1": "4e77868439280fb434d4697c7b911271406c81f3"
     },
     {
       "path": "src/assets/fonts/app_icons.ttf",
       "sha1": "18e5fe2f93c853bbb495975f04df56438d595de5"
+    },
+    {
+      "path": "src/assets/fonts/Entypo.ttf",
+      "sha1": "12b5670eb178138f77285d5f2c246d3cc5fa67d6"
+    },
+    {
+      "path": "src/assets/fonts/EvilIcons.ttf",
+      "sha1": "91d377ea3cf47490b256c2ed081704a7dabdae0c"
+    },
+    {
+      "path": "src/assets/fonts/Feather.ttf",
+      "sha1": "e6604258b1ced5efd51360875d782fca65381d47"
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome.ttf",
+      "sha1": "13b1eab65a983c7a73bc7997c479d66943f7c6cb"
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome5_Brands.ttf",
+      "sha1": "3fa2d67cef22da5c3f3eb5730c6afbd6fecf0372"
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome5_Regular.ttf",
+      "sha1": "7d849a3981a716e2ba4a84634bc57d0b8054a6a3"
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome5_Solid.ttf",
+      "sha1": "c1b9fae262f42868c075ac865a8ab34920e20a2c"
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome6_Brands.ttf",
+      "sha1": "a14a91d8c170fc9e159040f6794369d829e0859e"
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome6_Regular.ttf",
+      "sha1": "dad3ad71b383789bb62c249742ef59e34685e7d0"
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome6_Solid.ttf",
+      "sha1": "3eb9b4b2ea22711b96e3b356196fd20b4f17fb0e"
+    },
+    {
+      "path": "src/assets/fonts/Fontisto.ttf",
+      "sha1": "c090a3ec96a3f1bb9b615c2f3f204ce0dcdcdbc3"
+    },
+    {
+      "path": "src/assets/fonts/Foundation.ttf",
+      "sha1": "4b2bce6c792493a4a5716b6fec2dbefe89492c3f"
+    },
+    {
+      "path": "src/assets/fonts/Ionicons.ttf",
+      "sha1": "86e07c3d974eb09099e6e5a9b3b8310303cf0feb"
+    },
+    {
+      "path": "src/assets/fonts/MaterialCommunityIcons.ttf",
+      "sha1": "4c2a838b00dbb5e8bb1b368fce0de534e8eb241c"
+    },
+    {
+      "path": "src/assets/fonts/MaterialIcons.ttf",
+      "sha1": "7e02c3f005532ff4d24148567c84089756a7848a"
+    },
+    {
+      "path": "src/assets/fonts/Octicons.ttf",
+      "sha1": "56acefc0731f35ee23b195b1c8cb5fa94a0db97b"
     },
     {
       "path": "src/assets/fonts/Poppins-Black.ttf",
@@ -232,6 +124,282 @@
     {
       "path": "src/assets/fonts/Poppins-Thin.ttf",
       "sha1": "09ba4dcd5509c8085bf88c665dcc51cbdfced27b"
+    },
+    {
+      "path": "src/assets/fonts/SimpleLineIcons.ttf",
+      "sha1": "9ffb81a5a11112e292f2cc323e98486bad597599"
+    },
+    {
+      "path": "src/assets/fonts/Zocial.ttf",
+      "sha1": "6a48a962b06cc3acbdfd61df0d9a34744eea5e8d"
+    },
+    {
+      "path": "src/assets/wine_assets/333_beer/beer_333.png",
+      "sha1": "d7f09d0dc3090d4e94ad908c724d4bbfe044970a"
+    },
+    {
+      "path": "src/assets/wine_assets/333_beer/beer_333_portrait.png",
+      "sha1": "0c6bbbd382d48d54919dbca201481a6afd5057bd"
+    },
+    {
+      "path": "src/assets/wine_assets/333_beer/beer_333_square.png",
+      "sha1": "b125dbdc6dfbe1af12c9b1424e25a5858e80fdab"
+    },
+    {
+      "path": "src/assets/wine_assets/gin/beefeater_blackberry_gin.png",
+      "sha1": "4499e26c1342758b9e103c79332da7d9f88e5b98"
+    },
+    {
+      "path": "src/assets/wine_assets/gin/bombay_sapphire_gin.png",
+      "sha1": "a10d0790d4d719200df12c254bb2b3116cf3dcbd"
+    },
+    {
+      "path": "src/assets/wine_assets/gin/finsbury_london_dry.png",
+      "sha1": "307d50cd53265d7984a0f28f899c738e813ffa83"
+    },
+    {
+      "path": "src/assets/wine_assets/heineken_beer/heineken.png",
+      "sha1": "9af25aa0047a1abf5e67f6d0077c8d179b585ee6"
+    },
+    {
+      "path": "src/assets/wine_assets/heineken_beer/heineken_portrait.png",
+      "sha1": "891a1e2d8440f32b962eb7594a7563c7ffe8a369"
+    },
+    {
+      "path": "src/assets/wine_assets/heineken_beer/heineken_square.png",
+      "sha1": "4d06ea4d8bbe3bd0538194c6c2ec02b12060aedb"
+    },
+    {
+      "path": "src/assets/wine_assets/hoegaarden_rosee_beer/hoegaarden_rosee.png",
+      "sha1": "bcc39d0420cf300dae7721c3961a2a247a124f45"
+    },
+    {
+      "path": "src/assets/wine_assets/hoegaarden_rosee_beer/hoegaarden_rosee_portrait.png",
+      "sha1": "2ac473cc2ae17e9d7eb67a45c55c2a87f2403e6b"
+    },
+    {
+      "path": "src/assets/wine_assets/hoegaarden_rosee_beer/hoegaarden_rosee_square.png",
+      "sha1": "c390441c6032f89925ae9c106a16490ba20a1cda"
+    },
+    {
+      "path": "src/assets/wine_assets/kronenbourg_beer/kronenbourg.png",
+      "sha1": "d65c482166da325c7d655c1e72da38e25e1a3aad"
+    },
+    {
+      "path": "src/assets/wine_assets/kronenbourg_beer/kronenbourg_portrait.png",
+      "sha1": "8d4a4aa9a1eafbca9dcc3990b3e9b310de2944f6"
+    },
+    {
+      "path": "src/assets/wine_assets/kronenbourg_beer/kronenbourg_square.png",
+      "sha1": "6433ee663cbdfc2c4c38d5b92b06d5aeefd432b5"
+    },
+    {
+      "path": "src/assets/wine_assets/mort_subite_white_lambic_beer/mort_subite_white_lambic.png",
+      "sha1": "37904ec3492ec196256cec651a0b1da2ac84ffe9"
+    },
+    {
+      "path": "src/assets/wine_assets/mort_subite_white_lambic_beer/mort_subite_white_lambic_portrait.png",
+      "sha1": "1d6e8764b7188ab992d202ab619023ea0a283d80"
+    },
+    {
+      "path": "src/assets/wine_assets/mort_subite_white_lambic_beer/mort_subite_white_lambic_square.png",
+      "sha1": "0a43f40218665e159f34c475c5ac7d22a6e0ba37"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/portrait/red_wine_pic_1_portrait.png",
+      "sha1": "7d051451453ed237a3884febcdb572745acaa587"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/portrait/red_wine_pic_2_portrait.png",
+      "sha1": "a78e4a513a9f79ba9f30ae19c546b99d189c7c85"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/portrait/red_wine_pic_3_portrait.png",
+      "sha1": "e7fee0eb18f541fef01ba0f4cf5c4aecdb79ac52"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/portrait/red_wine_pic_4_portrait.png",
+      "sha1": "11c8e52b0beb69fc0a82b5be90c07fa3e3708264"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/portrait/red_wine_pic_5_portrait.png",
+      "sha1": "f4f7aa34724d6454c6aa785c09ecdf1af6ab1e8b"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/square/red_wine_pic_1_square.png",
+      "sha1": "c13089dbc6e868d126f25712766796a02e9363c2"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/square/red_wine_pic_2_square.png",
+      "sha1": "5ae5c06bcab945a09bb6f61e278ca70e8e253d57"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/square/red_wine_pic_3_square.png",
+      "sha1": "0a020e6a7f42265c4f8eebb1f5097a1caaef5992"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/square/red_wine_pic_4_square.png",
+      "sha1": "55a264f4fbcce62c7a5b540e999fb8d6fa9309ce"
+    },
+    {
+      "path": "src/assets/wine_assets/red_wine/square/red_wine_pic_5_square.png",
+      "sha1": "0f26a53a698183c96fb8087d0062713b99e90671"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/portrait/rose_wine_pic_1_portrait.png",
+      "sha1": "94bdb05693465fce19fd542e97ce5468727f8be3"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/portrait/rose_wine_pic_2_portrait.png",
+      "sha1": "a69b8c8053fc4513708b8b49b1b8a204a3512b49"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/portrait/rose_wine_pic_3_portrait.png",
+      "sha1": "b3b43d9a1c354d3eec215299e34cbaab1226fa00"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/portrait/rose_wine_pic_4_portrait.png",
+      "sha1": "a7285010ebe76a26571c87069e331c94432dedf7"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/portrait/rose_wine_pic_5_portrait.png",
+      "sha1": "8d211323a4d5c32aa4c790721386dbc9ba9bd4ee"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/square/rose_wine_pic_1_square.png",
+      "sha1": "ac6538c8007e6b11f1fb32c3974cdbdcb91c69ff"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/square/rose_wine_pic_2_square.png",
+      "sha1": "9da9d653a95662e618ae10f7a47e8cf913edb35b"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/square/rose_wine_pic_3_square.png",
+      "sha1": "37bae915ebef2abea9ba08aeba5390de5ada2b4e"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/square/rose_wine_pic_4_square.png",
+      "sha1": "c829a06d43b930ac9c26c24edf02dc2b4b574b36"
+    },
+    {
+      "path": "src/assets/wine_assets/rose_wine/square/rose_wine_pic_5_square.png",
+      "sha1": "24ffccc1fc5ad18586a61d367cb4ce0bf0044219"
+    },
+    {
+      "path": "src/assets/wine_assets/saporo_beer/saporo.png",
+      "sha1": "da5ec5459f7abe6f71f85425a2d5d1dd970dd5dc"
+    },
+    {
+      "path": "src/assets/wine_assets/saporo_beer/saporo_portrait.png",
+      "sha1": "76dda05f7aaaef67242cb80edd5e965a793fa150"
+    },
+    {
+      "path": "src/assets/wine_assets/saporo_beer/saporo_square.png",
+      "sha1": "30bc39305b95598a5521b119eebb6dcf4b89d56f"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/portrait/sparkling_wine_pic_1_portrait.png",
+      "sha1": "55942f3346ffb186caffebb0f323b8ecce7b3304"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/portrait/sparkling_wine_pic_2_portrait.png",
+      "sha1": "881e36f54819a69ff27c7fef2aeba3c29ef3aea9"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/portrait/sparkling_wine_pic_3_portrait.png",
+      "sha1": "ec5243e5abffaca367df3f55fd2c64ec95cdb6c8"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/portrait/sparkling_wine_pic_4_portrait.png",
+      "sha1": "9d7a14a1cbf2a290b7f9c670f45f930f2cac84e5"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/portrait/sparkling_wine_pic_5_portrait.png",
+      "sha1": "4981dee48e1bbc364e5fc62c161f913fdf8b612c"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/square/sparkling_wine_pic_1_square.png",
+      "sha1": "e21dafd4bbcb7b6de72050e790afc192a77561c1"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/square/sparkling_wine_pic_2_square.png",
+      "sha1": "f7e1a77aa94d8be4f28d08b5bc7b3d2986150f73"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/square/sparkling_wine_pic_3_square.png",
+      "sha1": "766d14181b2157603c146a41917f3fb8e62797d2"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/square/sparkling_wine_pic_4_square.png",
+      "sha1": "9b049f7a29cc10e958f36fe27c7661d5de349132"
+    },
+    {
+      "path": "src/assets/wine_assets/sparkling_wine/square/sparkling_wine_pic_5_square.png",
+      "sha1": "850105aa4be37d85d65c822a0d831fc012e67251"
+    },
+    {
+      "path": "src/assets/wine_assets/st_sebastiaan_grand_cru_beer/st_sebastiaan_grand_cru.png",
+      "sha1": "2eda9eb1368d560ecab52eee77d76396f6a395f0"
+    },
+    {
+      "path": "src/assets/wine_assets/st_sebastiaan_grand_cru_beer/st_sebastiaan_grand_cru_portrait.png",
+      "sha1": "7b5f1b0d199a42bacd0c111d14c754cf6dd3e4f1"
+    },
+    {
+      "path": "src/assets/wine_assets/st_sebastiaan_grand_cru_beer/st_sebastiaan_grand_cru_square.png",
+      "sha1": "c16538cd73d41f5c155b0d7c4b12761e2c5cabcc"
+    },
+    {
+      "path": "src/assets/wine_assets/tiger_beer/tiger.png",
+      "sha1": "135f8607309b5cd556e65e9741a166831b37034b"
+    },
+    {
+      "path": "src/assets/wine_assets/tiger_beer/tiger_portrait.png",
+      "sha1": "1fb9b5ec98d5fac30823662e95ad6fbee1bd44c6"
+    },
+    {
+      "path": "src/assets/wine_assets/tiger_beer/tiger_square.png",
+      "sha1": "757434eb98997037cb38270a39fc9f613d2ed1e4"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/portrait/white_wine_pic_1_portrait.png",
+      "sha1": "ac6e27aab37c6dbaaefad5e175164d01dde65e06"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/portrait/white_wine_pic_2_portrait.png",
+      "sha1": "1d8e04237ab9f721db8134296b70f001401db80d"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/portrait/white_wine_pic_3_portrait.png",
+      "sha1": "7dd47779c73a37982c05273db6a07b5667ca5ebd"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/portrait/white_wine_pic_4_portrait.png",
+      "sha1": "d8b086d58850ee6c0a6bc2d8630c761c9be6121f"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/portrait/white_wine_pic_5_portrait.png",
+      "sha1": "4282bfd9b3e8d5f5d7e4c63d9183d4ef25d5bad9"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/square/white_wine_pic_1_square.png",
+      "sha1": "49a746e316419a09b680105804724ccfde7d5f20"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/square/white_wine_pic_2_square.png",
+      "sha1": "595013a8622136b7edf8ed88c77c98df535e1aa3"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/square/white_wine_pic_3_square.png",
+      "sha1": "4dead46faba7c36b0f55262b7d84fc1e0c75552f"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/square/white_wine_pic_4_square.png",
+      "sha1": "3de04708b567f7f161d77596184e979f41cd1309"
+    },
+    {
+      "path": "src/assets/wine_assets/white_wine/square/white_wine_pic_5_square.png",
+      "sha1": "c589ee356d7b6cad8703204363b71647daec6789"
     }
   ]
 }

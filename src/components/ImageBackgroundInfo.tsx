@@ -16,7 +16,7 @@ import {
 } from '../theme/theme';
 import GradientBGIcon from './GradientBGIcon';
 import CustomIcon from './CustomIcon';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 interface ImageBackgroundInfoProps {
   EnableBackHandler: boolean;
   imagelink_portrait: ImageProps;
@@ -101,30 +101,22 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               </View>
               <View style={styles.ItemPropertiesContainer}>
                 <View style={styles.ProperFirst}>
-                  <CustomIcon
-                    name={type == 'Beer' ? 'bean' : 'beans'}
-                    size={type == 'Beer' ? FONTSIZE.size_18 : FONTSIZE.size_24}
-                    color={COLORS.primaryOrangeHex}
-                  />
-                  <Text
-                    style={[
-                      styles.PropertyTextFirst,
-                      {
-                        marginTop:
-                          type == 'Beer'
-                            ? SPACING.space_4 + SPACING.space_2
-                            : 0,
-                      },
-                    ]}>
-                    {type}
-                  </Text>
+                  <View style={styles.WineIcon}>
+                    <Ionicons
+                      name={'wine'}
+                      size={FONTSIZE.size_24}
+                      color={COLORS.primaryOrangeHex}></Ionicons>
+                  </View>
+                  <Text style={styles.PropertyTextFirst}>{type}</Text>
                 </View>
                 <View style={styles.ProperFirst}>
-                  <CustomIcon
-                    name={type == 'Beer' ? 'location' : 'drop'}
-                    size={FONTSIZE.size_16}
-                    color={COLORS.primaryOrangeHex}
-                  />
+                  <View style={styles.DropIcon}>
+                    <CustomIcon
+                      name="drop"
+                      size={FONTSIZE.size_18}
+                      color={COLORS.primaryOrangeHex}
+                    />
+                  </View>
                   <Text style={styles.PropertyTextLast}>{ingredients}</Text>
                 </View>
               </View>
@@ -205,6 +197,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: COLORS.primaryBlackHex,
+  },
+  WineIcon: {
+    marginTop: 2,
+    marginBottom: 4,
+  },
+  DropIcon: {
+    marginTop: 7,
   },
   PropertyTextFirst: {
     fontFamily: FONTFAMILY.poppins_medium,
