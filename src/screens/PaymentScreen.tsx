@@ -1,4 +1,5 @@
 import {
+  Alert,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -21,6 +22,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import CustomIcon from '../components/CustomIcon';
 import {useStore} from '../store/store';
 import PopUpAnimation from '../components/PopUpAnimation';
+import {
+  PlatformPay,
+  StripeProvider,
+  confirmPlatformPayPayment,
+  usePlatformPay,
+  useStripe,
+} from '@stripe/stripe-react-native';
 
 const PaymentList = [
   {
@@ -51,124 +59,170 @@ const PaymentScreen = ({navigation, route}: any) => {
   const addToOrderHistoryListFromCart = useStore(
     (state: any) => state.addToOrderHistoryListFromCart,
   );
-  const buttonPressHandler = () => {
-    setShowAnimation(true);
-    addToOrderHistoryListFromCart();
-    caculateCartPrice();
-    setTimeout(() => {
-      setShowAnimation(false);
-      navigation.navigate('History');
-    }, 2000);
+  const [name, setName] = useState('Dien');
+  const stripe = useStripe();
+
+  const subscribe = async () => {
+    try {
+      // sending request
+      const response = await fetch('http://10.0.2.2:8080/pay', {
+        method: 'POST',
+        body: JSON.stringify({name, route}),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log('Fetch passed!');
+      const data = await response.json();
+      if (!response.ok) return Alert.alert(data.message);
+      const clientSecret = data.clientSecret;
+
+      const initSheet = await stripe.initPaymentSheet({
+        paymentIntentClientSecret: clientSecret,
+        merchantDisplayName: 'Merchant Name',
+      });
+      if (initSheet.error) return Alert.alert(initSheet.error.message);
+      console.log('response ok!');
+      const presentSheet = await stripe.presentPaymentSheet({clientSecret});
+      if (presentSheet.error) return Alert.alert(presentSheet.error.message);
+      Alert.alert('Payment complete, thank you!');
+      setShowAnimation(true);
+      addToOrderHistoryListFromCart();
+      caculateCartPrice();
+      setTimeout(() => {
+        setShowAnimation(false);
+        navigation.navigate('History');
+      }, 2000);
+    } catch (err) {
+      console.error(err);
+      Alert.alert('Something went wrong, try again later!');
+    }
   };
+  const buttonPressHandler = () => {
+    if (paymentMode == 'Google Pay') {
+      subscribe();
+    } else {
+      setShowAnimation(true);
+      addToOrderHistoryListFromCart();
+      caculateCartPrice();
+      setTimeout(() => {
+        setShowAnimation(false);
+        navigation.navigate('History');
+      }, 2000);
+    }
+  };
+
   return (
-    <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
-      {showAnimation ? (
-        <PopUpAnimation
-          style={styles.LottieAnimation}
-          source={require('../lottie/successful.json')}
-        />
-      ) : (
-        <></>
-      )}
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.ScrollViewFlex}>
-        <View style={styles.HeaderContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.pop();
-            }}>
-            <GradientBGIcon
-              name="left"
-              color={COLORS.primaryLightGreyHex}
-              size={FONTSIZE.size_16}
-            />
-          </TouchableOpacity>
-          <Text style={styles.HeaderText}>Payment</Text>
-          <View style={styles.EmptyView} />
-        </View>
-        <View style={styles.PaymentOptionsContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setPaymentMode('Credit Card');
-            }}>
-            <View
-              style={[
-                styles.CreditCardContainer,
-                {
-                  borderColor:
-                    paymentMode == 'Credit Card'
-                      ? COLORS.primaryOrangeHex
-                      : COLORS.primaryGreyHex,
-                },
-              ]}>
-              <Text style={styles.CreditCardTitle}>Credit Card</Text>
-              <View style={styles.CreditCardBG}>
-                <LinearGradient
-                  start={{x: 0, y: 0}}
-                  end={{x: 1, y: 1}}
-                  colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
-                  style={styles.LinearGradientStyle}>
-                  <View style={styles.CreditCardRow}>
-                    <CustomIcon
-                      name="chip"
-                      size={FONTSIZE.size_20 * 2}
-                      color={COLORS.primaryOrangeHex}
-                    />
-                    <CustomIcon
-                      name="visa"
-                      size={FONTSIZE.size_20 * 2}
-                      color={COLORS.primaryWhiteHex}
-                    />
-                  </View>
-                  <View style={styles.CreditCardNumberContainer}>
-                    <Text style={styles.CreditCardNumber}>3879</Text>
-                    <Text style={styles.CreditCardNumber}>1234</Text>
-                    <Text style={styles.CreditCardNumber}>1234</Text>
-                    <Text style={styles.CreditCardNumber}>1234</Text>
-                  </View>
-                  <View style={styles.CreditCardRow}>
-                    <View style={styles.CreditCardNameContainer}>
-                      <Text style={styles.CreditCardNameSubtitle}>
-                        Card Holder Name
-                      </Text>
-                      <Text style={styles.CreditCardNameTitle}>
-                        Nguyen An Tran Dien
-                      </Text>
-                    </View>
-                    <View style={styles.CreditCarDateContainer}>
-                      <Text style={styles.CreditCardNameSubtitle}>
-                        Expiry Date
-                      </Text>
-                      <Text style={styles.CreditCardNameTitle}>05/22</Text>
-                    </View>
-                  </View>
-                </LinearGradient>
-              </View>
-            </View>
-          </TouchableOpacity>
-          {PaymentList.map((data: any) => (
+    <StripeProvider publishableKey="pk_test_51PK6jnP24CzyDzW7X23OaQN4DyKbVrCDKE4UOYbhA5x5rY8auXcsCM9qqsKK0wZa0AMyM3Wc2DeLMcp2q50HukMA00aC8a8NTJ">
+      <View style={styles.ScreenContainer}>
+        <StatusBar backgroundColor={COLORS.primaryBlackHex} />
+        {showAnimation ? (
+          <PopUpAnimation
+            style={styles.LottieAnimation}
+            source={require('../lottie/successful.json')}
+          />
+        ) : (
+          <></>
+        )}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.ScrollViewFlex}>
+          <View style={styles.HeaderContainer}>
             <TouchableOpacity
-              key={data.name}
               onPress={() => {
-                setPaymentMode(data.name);
+                navigation.pop();
               }}>
-              <PaymentMethod
-                paymentMode={paymentMode}
-                name={data.name}
-                icon={data.icon}
-                isIcon={data.isIcon}
+              <GradientBGIcon
+                name="left"
+                color={COLORS.primaryLightGreyHex}
+                size={FONTSIZE.size_16}
               />
             </TouchableOpacity>
-          ))}
-        </View>
-      </ScrollView>
-      <PaymentFooter
-        buttonTitle={'Pay with ' + paymentMode}
-        price={{price: route.params.amount, currency: '$'}}
-        buttonPressHandler={buttonPressHandler}></PaymentFooter>
-    </View>
+            <Text style={styles.HeaderText}>Payment</Text>
+            <View style={styles.EmptyView} />
+          </View>
+          <View style={styles.PaymentOptionsContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                setPaymentMode('Credit Card');
+              }}>
+              <View
+                style={[
+                  styles.CreditCardContainer,
+                  {
+                    borderColor:
+                      paymentMode == 'Credit Card'
+                        ? COLORS.primaryOrangeHex
+                        : COLORS.primaryGreyHex,
+                  },
+                ]}>
+                <Text style={styles.CreditCardTitle}>Credit Card</Text>
+                <View style={styles.CreditCardBG}>
+                  <LinearGradient
+                    start={{x: 0, y: 0}}
+                    end={{x: 1, y: 1}}
+                    colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
+                    style={styles.LinearGradientStyle}>
+                    <View style={styles.CreditCardRow}>
+                      <CustomIcon
+                        name="chip"
+                        size={FONTSIZE.size_20 * 2}
+                        color={COLORS.primaryOrangeHex}
+                      />
+                      <CustomIcon
+                        name="visa"
+                        size={FONTSIZE.size_20 * 2}
+                        color={COLORS.primaryWhiteHex}
+                      />
+                    </View>
+                    <View style={styles.CreditCardNumberContainer}>
+                      <Text style={styles.CreditCardNumber}>3879</Text>
+                      <Text style={styles.CreditCardNumber}>1234</Text>
+                      <Text style={styles.CreditCardNumber}>1234</Text>
+                      <Text style={styles.CreditCardNumber}>1234</Text>
+                    </View>
+                    <View style={styles.CreditCardRow}>
+                      <View style={styles.CreditCardNameContainer}>
+                        <Text style={styles.CreditCardNameSubtitle}>
+                          Card Holder Name
+                        </Text>
+                        <Text style={styles.CreditCardNameTitle}>
+                          Nguyen An Tran Dien
+                        </Text>
+                      </View>
+                      <View style={styles.CreditCarDateContainer}>
+                        <Text style={styles.CreditCardNameSubtitle}>
+                          Expiry Date
+                        </Text>
+                        <Text style={styles.CreditCardNameTitle}>05/22</Text>
+                      </View>
+                    </View>
+                  </LinearGradient>
+                </View>
+              </View>
+            </TouchableOpacity>
+            {PaymentList.map((data: any) => (
+              <TouchableOpacity
+                key={data.name}
+                onPress={() => {
+                  setPaymentMode(data.name);
+                }}>
+                <PaymentMethod
+                  paymentMode={paymentMode}
+                  name={data.name}
+                  icon={data.icon}
+                  isIcon={data.isIcon}
+                />
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
+        <PaymentFooter
+          buttonTitle={'Pay with ' + paymentMode}
+          price={{price: route.params.amount, currency: '$'}}
+          buttonPressHandler={buttonPressHandler}></PaymentFooter>
+      </View>
+    </StripeProvider>
   );
 };
 
@@ -261,3 +315,6 @@ const styles = StyleSheet.create({
 });
 
 export default PaymentScreen;
+function useStripePayment(): {isPaymentReady: any; presentGooglePay: any} {
+  throw new Error('Function not implemented.');
+}
